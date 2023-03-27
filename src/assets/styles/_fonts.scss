@@ -1,0 +1,15 @@
+$font-path: '@/assets/fonts/';
+
+@mixin font-face($font-name, $file-name) {
+  @font-face {
+    font-family: #{$font-name};
+    src: url('#{$font-path}#{$file-name}.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+ @include font-face('inter400', '400');
+ @include font-face('inter500', '500');
+ @include font-face('inter600', '600');
+ @include font-face('inter700', '700');
+ @include font-face('inter800', '800');

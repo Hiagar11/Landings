@@ -1,3 +1,88 @@
 @import "colors";
 @import "fonts";
+@import '_normalize.scss';
 
+
+
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+body {
+  min-height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.test {
+  outline: 1px solid red;
+  outline-offset: -1px;
+}
+.square {
+  width: 100px;
+  height: 75px;
+  text-align: center;
+  padding: 12px 0 24px 5px;
+  background: url('@/assets/images/svg/logo.svg');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  border: 1px solid #FCE300;
+  border-radius: 20px;
+  color: #FCE300;
+  box-shadow: 0 0 5px 0 #FCE300;
+  text-shadow: 0 0 2px #FCE300;
+  font-family: 'inter500', sans-serif;
+  font-size: 0.7rem;
+  animation: shadowLogo 3s ease infinite;
+}
+
+.phone {
+  &::before {
+    content: '';
+    min-width: 40px;
+    min-height: 40px;
+    background-size: 40px 40px;
+  }
+}
+
+.mts {
+  &::before {
+    background: url('@/assets/images/svg/mts.svg');
+  }
+}
+
+.phoenix {
+  &::before {
+    background-image: url("@/assets/images/svg/phoenix.svg");
+  }
+}
+
+
+@keyframes shadowLogo {
+  from {
+    box-shadow: 0 0 5px 0 #FCE300 inset;
+  }
+  25% {
+    box-shadow: 0 0 7px 0 #FCE300 inset;
+  }
+  50% {
+    box-shadow: 0 0 10px 0 #FCE300 inset;
+  }
+  75% {
+    box-shadow: 0 0 7px 0 #FCE300 inset;
+  }
+  to {
+    box-shadow: 0 0 5px 0 #FCE300 inset;
+  }
+}
